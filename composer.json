@@ -1,0 +1,21 @@
+{
+    "name": "ceres/dude",
+    "description": "Dude database php decoder",
+    "minimum-stability": "dev",
+    "license": "Apache-2.0",
+    "authors": [
+        {
+            "name": "ceres",
+            "email": "email@example.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "ceres\\": "src/"
+        }
+    },
+    "require": {
+      "php": "7.*",
+      "ext-pdo": "*"
+    }
+}
