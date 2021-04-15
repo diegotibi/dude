@@ -1,5 +1,5 @@
 <?php
-namespace ceres;
+namespace diegotibi;
 
 use Exception;
 use PDO;

@@ -1,5 +1,5 @@
 {
-    "name": "ceres/dude",
+    "name": "diegotibi/dude",
     "description": "Dude database php decoder",
     "minimum-stability": "dev",
     "license": "Apache-2.0",
@@ -11,7 +11,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "ceres\\": "src/"
+            "diegotibi\\": "src/"
         }
     },
     "require": {

@@ -10,11 +10,11 @@ Usage:
 
 Clone this repo or use composer:
     
-`composer require "ceres/dude"`
+`composer require "diegotibi/dude"`
 
 Download the dude.db from your device and run the code like this:
 
-    $db = new \ceres\Dude(Yii::getAlias('@static/dude.db'));
+    $db = new \diegotibi\Dude(Yii::getAlias('@static/dude.db'));
     $devices = $db->fetchDevices();
 
     var_dump($devices);
