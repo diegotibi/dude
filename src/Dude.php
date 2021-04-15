@@ -1,5 +1,5 @@
 <?php
-namespace diegotibi;
+namespace DT;
 
 use Exception;
 use PDO;
@@ -64,6 +64,11 @@ class Dude
      * @var string[]
      */
     private $links;
+    
+    /**
+     * @var string[]
+     */
+    private $maps;
     
     /**
      * Dude constructor.
@@ -137,8 +142,8 @@ class Dude
      */
     public function fetchMaps()
     {
-        if ($this->devices) {
-            return $this->devices;
+        if ($this->maps) {
+            return $this->maps;
         }
         $query = $this->db->query("SELECT * from objs WHERE HEX(obj) LIKE '4D320100FF8801000A%';");
         $maps = [];
@@ -146,7 +151,7 @@ class Dude
             $data = $this->decode($row['obj']);
             $maps[$row['id']] = $data['name'];
         }
-        $this->devices = $maps;
+        $this->maps = $maps;
         return $maps;
     }
     
@@ -184,9 +189,7 @@ class Dude
         }
         do {
             $r = fread($fp, 4);
-            try {
-                $bmarker = unpack("V", $r);
-            } catch (\Throwable $e) {
+            if (($bmarker = @unpack("V", $r)) === false) {
                 continue;
             }
             $bidraw = $bmarker[1] & 0xFFFFFF;

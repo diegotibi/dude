@@ -1,4 +1,6 @@
-## The Dude database reader
+## The Dude PHP DB toolbox
+
+This simple php class can read from a Mikrotik dude.db sqlite database and extract various data.
 
 Original idea from this forum thread: https://forum.mikrotik.com/viewtopic.php?t=145928
 
@@ -14,7 +16,16 @@ Clone this repo or use composer:
 
 Download the dude.db from your device and run the code like this:
 
-    $db = new \diegotibi\Dude(Yii::getAlias('@static/dude.db'));
+    $db = new \DT\Dude('path_to/dude.db'));
     $devices = $db->fetchDevices();
 
-    var_dump($devices);
+Take a look in example/index.php for a more detailed example.
+
+### To do:
+
+- Associate various record keys to the correct label
+- Separate map links from device ones
+- Implement Iterable traits to reduce memory consumption  
+- Write an encode method (I really don't have plans on this one)
+
+If you want to improve this class just clone the repo and propose a pull request, I'll be glad to accept any help.

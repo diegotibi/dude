@@ -1,17 +1,17 @@
 {
     "name": "diegotibi/dude",
-    "description": "Dude database php decoder",
+    "description": "The Dude PHP DB toolbox",
     "minimum-stability": "dev",
     "license": "Apache-2.0",
     "authors": [
         {
-            "name": "ceres",
-            "email": "email@example.com"
+            "name": "Diego Tibi",
+            "email": "diego@wiset.it"
         }
     ],
     "autoload": {
         "psr-4": {
-            "diegotibi\\": "src/"
+            "DT\\": "src/"
         }
     },
     "require": {
